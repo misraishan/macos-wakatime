@@ -139,6 +139,9 @@ extension AXUIElement {
             case .terminal:
                 guard let title = extractPrefix(rawTitle, separator: " - ") else { return nil }
                 return title
+            case .termius:
+                guard let title = extractPrefix(rawTitle, separator: " - ") else { return nil }
+                return title
             case .warp:
                 guard
                     let title = extractPrefix(rawTitle, separator: " - "),

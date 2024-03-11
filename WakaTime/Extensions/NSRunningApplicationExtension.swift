@@ -16,6 +16,7 @@ enum MonitoredApp: String, CaseIterable {
     case slack = "com.tinyspeck.slackmacgap"
     case tableplus = "com.tinyapp.TablePlus"
     case terminal = "com.apple.Terminal"
+    case termius = "com.termius-dmg.mac"
     case warp = "dev.warp.Warp-Stable"
     case wecom = "com.tencent.WeWorkMac"
     case whatsapp = "net.whatsapp.WhatsApp"
@@ -39,6 +40,7 @@ enum MonitoredApp: String, CaseIterable {
     static let electronAppIds = [
         MonitoredApp.figma.rawValue,
         MonitoredApp.slack.rawValue,
+        MonitoredApp.termius.rawValue,
     ]
 
     // list apps which are enabled by default on first run

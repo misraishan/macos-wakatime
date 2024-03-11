@@ -127,6 +127,10 @@ class MonitoringManager {
                 return HeartbeatData(
                     entity: title,
                     category: .coding)
+            case .termius:
+                return HeartbeatData(
+                    entity: title,
+                    category: .debugging)
             case .warp:
                 return HeartbeatData(
                     entity: title,
