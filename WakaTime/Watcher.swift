@@ -45,6 +45,7 @@ class Watcher: NSObject {
                         entity: heartbeat.entity,
                         entityType: EntityType.app,
                         language: heartbeat.language,
+                        project: heartbeat.project,
                         category: heartbeat.category,
                         isWrite: false
                     )
@@ -254,7 +255,8 @@ class Watcher: NSObject {
                 app: app,
                 entity: path.path,
                 entityType: EntityType.file,
-                language: nil,
+                language: nil,  
+                project: nil,
                 category: self.isBuilding ? Category.building : Category.coding,
                 isWrite: isWrite
             )
@@ -291,6 +293,7 @@ private func observerCallback(
                     entity: currentPath.path,
                     entityType: EntityType.file,
                     language: nil,
+                    project: nil,
                     category: this.isBuilding ? Category.building : Category.coding,
                     isWrite: false)
             }

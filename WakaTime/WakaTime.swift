@@ -95,6 +95,7 @@ class WakaTime: HeartbeatEventHandler {
         entity: String,
         entityType: EntityType,
         language: String?,
+        project: String?,
         category: Category?,
         isWrite: Bool) {
         let time = Int(NSDate().timeIntervalSince1970)
@@ -136,6 +137,10 @@ class WakaTime: HeartbeatEventHandler {
         if let language = language {
             args.append("--language")
             args.append(language)
+        }
+        if let project: String = project {
+            args.append("--project")
+            args.append(project)
         }
 
         NSLog("Sending heartbeat with: \(args)")
@@ -196,6 +201,7 @@ protocol HeartbeatEventHandler {
         entity: String,
         entityType: EntityType,
         language: String?,
+        project: String?,
         category: Category?,
         isWrite: Bool)
 }
