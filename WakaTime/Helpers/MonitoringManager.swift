@@ -74,6 +74,26 @@ class MonitoringManager {
                 return HeartbeatData(
                     entity: title,
                     category: .browsing)
+            case .fleet:
+                var language = title.split(separator: "—").first?.split(separator: ".").last?.trimmingCharacters(in: .whitespaces)
+                let project = title.split(separator: "—").last?.trimmingCharacters(in: .whitespaces)
+
+                if language == "tsx" || language == "ts" {
+                    language = "TypeScript"
+                } else if language == "js" || language == "jsx" {
+                    language = "JavaScript"
+                } else if language == "py" {
+                    language = "Python"
+                }
+            
+                let heartbeatData = HeartbeatData(
+                    entity: title,
+                    language: language ?? "Unknown",
+                    category: .coding,
+                    project: project)
+
+                print("Fleet heart beat", heartbeatData)
+                return heartbeatData
             case .figma:
                 return HeartbeatData(
                     entity: title,
@@ -179,4 +199,5 @@ struct HeartbeatData {
     var entity: String
     var language: String?
     var category: Category?
+    var project: String?
 }

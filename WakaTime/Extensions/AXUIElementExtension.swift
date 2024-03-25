@@ -74,6 +74,9 @@ extension AXUIElement {
                     title != "New Tab"
                 else { return nil }
                 return title
+            case .fleet:
+                guard let title = extractPrefix(rawTitle, separator: " - ") else { return nil }
+                return title
             case .figma:
                 guard
                     let title = extractPrefix(rawTitle, separator: " – "),

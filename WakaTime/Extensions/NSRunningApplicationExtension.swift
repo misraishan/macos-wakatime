@@ -5,6 +5,7 @@ enum MonitoredApp: String, CaseIterable {
     case canva = "com.canva.CanvaDesktop"
     case chrome = "com.google.Chrome"
     case figma = "com.figma.Desktop"
+    case fleet = "Fleet.app"
     case imessage = "com.apple.MobileSMS"
     case iterm2 = "com.googlecode.iterm2"
     case linear = "com.linear"
